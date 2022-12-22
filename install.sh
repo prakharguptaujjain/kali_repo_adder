@@ -11,8 +11,10 @@ if [ -f /etc/apt/sources.list ]; then
   sudo mv /tmp/sources.list /etc/apt/sources.list
 else
   echo "Error: /etc/apt/sources.list not found"
+  exit
 fi
 
+sleep 5
 
 if (( $EUID != 0 )); then
     echo "Please run as root"
